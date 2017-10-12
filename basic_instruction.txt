@@ -1,0 +1,40 @@
+
+
+  start-all 
+  jsp 
+  hadoop fs -mkdir /text
+  hadoop dfs -copyFromLocal /home/hduser/Downloads/files /text/
+  hadoop fs -ls
+
+  hadoop fs -ls
+  hadoop fs -ls /text/
+  hadoop fs -ls /text/files
+  hadoop fs -rm mapper.py /text/files
+  hadoop fs -ls /text/files
+  hadoop fs -rm tt.txt /text/files
+  hadoop fs - rm mapper.py /text/files
+  hadoop fs -rm mapper.py /text/files
+  hadoop fs -ls /text/files
+  hadoop fs -rm mapper.py /text/files
+  hadoop fs -rm files  /text
+  hadoop fs -ls /text
+  hadoop dfs -rm tt.txt /text/files
+  hadoop dfs -rm /text/files/mapper.txt
+  hadoop dfs -copyFromLocal /home/hduser/Downloads/files /text/
+
+
+
+
+
+
+
+
+
+
+
+hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar \-file /home/hduser/Downloads/files/mapper.py    -mapper /home/hduser/Downloads/files/mapper.py \
+-file /home/hduser/Downloads/files/reducer.py   -reducer /home/hduser/Downloads/files/reducer.py \
+-input /text/files/* -output /text/dev_output
+
+
+
