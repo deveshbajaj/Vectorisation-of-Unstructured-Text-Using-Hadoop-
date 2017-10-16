@@ -1,5 +1,6 @@
 from collections import Counter
 import pandas
+import re
 import numpy
 headlines = [
     "PretzelBros, airbnb for people who like pretzels, raises $2 million",
@@ -11,18 +12,20 @@ headlines = [
 
 
 unique_words = list(set(" ".join(headlines).split(" ")))
-print(unique_words)
+#print(unique_words)
 
 def make_matrix(headlines, vocab):
     matrix = []
     for headline in headlines:
-        print(headline)
-        counter = Counter(headline)
-        print(counter)
+        counter = Counter()
+        st = re.findall(r'\w+',headline)
+        for i in st:
+            counter[i] +=1
+        
 
         # Turn the dictionary into a matrix row using the vocab.
         row = [counter.get(w, 0) for w in vocab]
-        print(row)
+        #print(row)
         matrix.append(row)
     df = pandas.DataFrame(matrix)
     df.columns = unique_words
