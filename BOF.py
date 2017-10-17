@@ -21,9 +21,8 @@ def make_matrix(headlines, vocab):
         st = re.findall(r'\w+',headline)
         for i in st:
             counter[i] +=1
+        #make counter
         
-
-        # Turn the dictionary into a matrix row using the vocab.
         row = [counter.get(w, 0) for w in vocab]
         #print(row)
         matrix.append(row)
