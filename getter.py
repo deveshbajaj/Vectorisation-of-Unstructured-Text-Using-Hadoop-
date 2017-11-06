@@ -21,11 +21,11 @@ for line in sys.stdin:
     final = ' '.join(filtered_sentence)
     print(final)
 
-"""unique_words = list(set(text.split(" ")))
+unique_words = list(set(text.split(" ")))
 print(len(unique_words))
 final = ' '.join(unique_words)
 f = open('words.txt','w')
 f.write(final)
 f.close()
 #print(unique_words)
-print("done")"""
+print("done")
