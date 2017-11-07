@@ -3,7 +3,7 @@
   start-all 
   jsp 
   hadoop fs -mkdir /text
-  hadoop dfs -copyFromLocal /home/hduser/Downloads/files/word.txt /text/
+  hadoop dfs -copyFromLocal /home/hduser/Downloads/files/dataset/ /text/
   hadoop fs -ls
 
   hadoop fs -ls

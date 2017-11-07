@@ -1,17 +1,13 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 from operator import itemgetter
 from collections import Counter
-
-
 import sys
-import pandas
 import re
-import numpy
 
-f = open("words.txt",'r')
-d = f.readline()
-unique_words = list(d.split(" "))
-print(type(d),len(d))
+unique_words={'Bihops', 'RAMBUNCTIOUS','Mincius pad vicelike','lusciously' ,'foliage', 'approximated', 'vitals','humbleness', 'cooking'} 
+
+
+#print(type(d),len(d))
 
 matrix =[]
 # input comes from STDIN
@@ -24,14 +20,20 @@ for line in sys.stdin:
     for i in st:
         counter[i] +=1
     row = [counter.get(w, 0) for w in unique_words]
-    print(''.join(row))
 
+    try :
+        print(row)
+    except :
+        # count was not a number, so silently
+        # ignore/discard this line
+        print("NULL")
+        continue
     matrix.append(row)
 
-df = pandas.DataFrame(matrix)
-df.columns = unique_words
+#df = pandas.DataFrame(matrix)
+#df.columns = unique_words
 
 #print(type(df))
-df.to_csv("dev_output.csv")
+#df.to_csv("dev_output.csv")
 #print("done")"""
     
