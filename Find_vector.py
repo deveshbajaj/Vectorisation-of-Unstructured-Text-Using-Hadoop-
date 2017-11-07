@@ -1,37 +1,37 @@
+#!/usr/bin/env python3
 from operator import itemgetter
+from collections import Counter
+
+
 import sys
+import pandas
+import re
+import numpy
 
-current_word = None
-current_count = 0
-word = None
+f = open("words.txt",'r')
+d = f.readline()
+unique_words = list(d.split(" "))
+print(type(d),len(d))
 
+matrix =[]
 # input comes from STDIN
 for line in sys.stdin:
     # remove leading and trailing whitespace
     line = line.strip()
+    #print(line)
+    counter = Counter()
+    st = re.findall(r'\w+',line)
+    for i in st:
+        counter[i] +=1
+    row = [counter.get(w, 0) for w in unique_words]
+    print(''.join(row))
 
-    # parse the input we got from mapper.py
-    word, count = line.split('\t', 1)
+    matrix.append(row)
 
-    # convert count (currently a string) to int
-    try:
-        count = int(count)
-    except ValueError:
-        # count was not a number, so silently
-        # ignore/discard this line
-        continue
+df = pandas.DataFrame(matrix)
+df.columns = unique_words
 
-    # this IF-switch only works because Hadoop sorts map output
-    # by key (here: word) before it is passed to the reducer
-    if current_word == word:
-        current_count += count
-    else:
-        if current_word:
-            # write result to STDOUT
-            print '%s\t%s' % (current_word, current_count)
-        current_count = count
-        current_word = word
-
-# do not forget to output the last word if needed!
-if current_word == word:
-    print '%s\t%s' % (current_word, current_count)
+#print(type(df))
+df.to_csv("dev_output.csv")
+#print("done")"""
+    

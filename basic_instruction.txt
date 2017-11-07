@@ -3,7 +3,7 @@
   start-all 
   jsp 
   hadoop fs -mkdir /text
-  hadoop dfs -copyFromLocal /home/hduser/Downloads/files /text/
+  hadoop dfs -copyFromLocal /home/hduser/Downloads/files/word.txt /text/
   hadoop fs -ls
 
   hadoop fs -ls
@@ -24,17 +24,20 @@
 
 
 
+hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar \
+-file /home/hduser/Downloads/files/mapper.py    
+-mapper /home/hduser/Downloads/files/mapper.py \
+-file /home/hduser/Downloads/files/reducer.py   
+-reducer /home/hduser/Downloads/files/reducer.py \
+-input /text/dataset/* -output /text/dev_output
+
+hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar \
+-file /home/hduser/downloads/files/getter.py -mapper /home/hduser/downloads/files/getter.py \ -file /home/hduser/downloads/files/find_vector.py    -reducer /home/hduser/downloads/files/find_vector.py \  -file /home/hduser/downloads/files/nltk.mod 
+-input /text/dataset/4300-0.txt -output /text/dev_output
 
 
 
 
-
-
-
-
-hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar \-file /home/hduser/Downloads/files/mapper.py    -mapper /home/hduser/Downloads/files/mapper.py \
--file /home/hduser/Downloads/files/reducer.py   -reducer /home/hduser/Downloads/files/reducer.py \
--input /text/files/* -output /text/dev_output
 
 
 
