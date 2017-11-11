@@ -20,7 +20,7 @@
   hadoop fs -ls /text
   hadoop dfs -rm tt.txt /text/files
   hadoop dfs -rm /text/files/mapper.txt
-  hadoop dfs -copyFromLocal /home/hduser/Downloads/files /text/
+  hadoop dfs -copyFromLocal /home/hduser/Downloads/files/dataset /text/
 
 
 
@@ -36,6 +36,7 @@ hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar
 -input /text/dataset/4300-0.txt -output /text/dev_output
 
 
+hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar \-file /home/hduser/Downloads/files/getter.py    -mapper /home/hduser/Downloads/files/getter.py -file /home/hduser/Downloads/files/Find_vector.py   -reducer /home/hduser/Downloads/files/Find_vector.py -input /text/dataset/t3.txt  -output /text/dev_output2
 
 
 

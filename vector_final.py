@@ -1,11 +1,15 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*- 
 from operator import itemgetter
 from collections import Counter
 import sys
+import pandas 
 import re
 
-unique_words={'Bihops', 'RAMBUNCTIOUS','Mincius pad vicelike','lusciously' ,'foliage', 'approximated', 'vitals','humbleness', 'cooking'} 
 
+f = open("wordds.txt",'r')
+g= f.readline().split(" ")
+unique_words = set(list(f))
 
 #print(type(d),len(d))
 
@@ -30,10 +34,10 @@ for line in sys.stdin:
         continue
     matrix.append(row)
 
-#df = pandas.DataFrame(matrix)
-#df.columns = unique_words
+df = pandas.DataFrame(matrix)
+df.columns = unique_words
 
-#print(type(df))
-#df.to_csv("dev_output.csv")
-#print("done")"""
+print(type(df))
+df.to_csv("part-00000")
+print("done")
     
