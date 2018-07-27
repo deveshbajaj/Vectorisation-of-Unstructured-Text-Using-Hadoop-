@@ -11,5 +11,5 @@ and potentially in the collection.
 
 # Haddop Setup of multinode cluster
 
-![alt text](http://3.bp.blogspot.com/-sfvUSSCvIm0/UgJNRpwpQeI/AAAAAAAABJU/9aqDZEnlaIo/s1600/Lesson+14+-+HDFS+in+detail.png)
+![alt text](http://ownself.me/wp-content/uploads/what-is-hadoop-ibm-big-data-analytics-hub.jpg)
 
