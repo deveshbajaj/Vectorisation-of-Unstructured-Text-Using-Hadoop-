@@ -11,5 +11,11 @@ and potentially in the collection.
 
 # Haddop Setup of multinode cluster
 
-![alt text](http://ownself.me/wp-content/uploads/what-is-hadoop-ibm-big-data-analytics-hub.jpg)
+![alt text](https://raw.githubusercontent.com/deveshbajaj/Vectorisation-of-Unstructured-Text-Using-Hadoop-/master/screenshots/what-is-hadoop-ibm-big-data-analytics-hub.jpg)
 
+# Simple Demo
+
+![alt text](https://raw.githubusercontent.com/deveshbajaj/Vectorisation-of-Unstructured-Text-Using-Hadoop-/master/screenshots/Screenshot%20from%202017-10-28%2022-13-17.png)
+
+
+Other images are in screenshot folder
