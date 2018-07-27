@@ -9,7 +9,7 @@ involves the accumulation of the aggregate vocabulary, mapping that vocabulary t
 numeric identifiers, and finally, some arithmetic involving word counts in documents,
 and potentially in the collection.
 
-# Haddop Setup of multinode cluster
+# Hadoop Setup of multinode cluster
 
 ![alt text](https://raw.githubusercontent.com/deveshbajaj/Vectorisation-of-Unstructured-Text-Using-Hadoop-/master/screenshots/what-is-hadoop-ibm-big-data-analytics-hub.jpg)
 
